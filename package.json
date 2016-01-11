@@ -24,5 +24,8 @@
   },
   "devDependencies": {
     "chai": "^3.4.1"
+  },
+  "bin": {
+    "toutf8": "./src/convert-cli.js"
   }
 }
