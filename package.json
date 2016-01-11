@@ -1,0 +1,28 @@
+{
+  "name": "murray-convert-to-utf8",
+  "version": "1.0.0",
+  "description": "This project converts all the subtitle files in a particular directory into utf8 encoding.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -c --recursive ./src/**/*.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fartbagxp/murray-convert-to-utf8.git"
+  },
+  "author": "fartbagxp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fartbagxp/murray-convert-to-utf8/issues"
+  },
+  "homepage": "https://github.com/fartbagxp/murray-convert-to-utf8#readme",
+  "dependencies": {
+    "commander": "2.9.x",
+    "iconv-lite": "0.4.x",
+    "jschardet": "1.4.x",
+    "lodash": "3.10.x"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1"
+  }
+}
