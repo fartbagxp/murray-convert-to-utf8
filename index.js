@@ -1,3 +1,7 @@
+#!/usr/bin/env node
+
 'use strict';
 
-require('./src/convert-cli');
+var cli = require('./src/convert-cli');
+
+cli.work();

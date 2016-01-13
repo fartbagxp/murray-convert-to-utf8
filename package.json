@@ -20,12 +20,14 @@
     "commander": "2.9.x",
     "iconv-lite": "0.4.x",
     "jschardet": "1.4.x",
-    "lodash": "3.10.x"
+    "lodash": "3.10.x",
+    "mkdirp": "0.5.x"
   },
   "devDependencies": {
-    "chai": "^3.4.1"
+    "chai": "3.4.x",
+    "rimraf": "2.5.x"
   },
   "bin": {
-    "toutf8": "./src/convert-cli.js"
+    "toutf8": "./index.js"
   }
 }
