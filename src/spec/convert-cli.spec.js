@@ -18,7 +18,9 @@ describe('Make sure the command line converter can convert from GB2312 to UTF8 e
       process.argv = ['node',
         'convert-cli.js',
         '-i',
-        testDir
+        testDir,
+        '-o',
+        path.resolve(__dirname, './data')
       ];
 
       cli.work();

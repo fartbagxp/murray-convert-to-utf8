@@ -18,6 +18,7 @@
   "homepage": "https://github.com/fartbagxp/murray-convert-to-utf8#readme",
   "dependencies": {
     "commander": "2.9.x",
+    "debug": "2.2.x",
     "iconv-lite": "0.4.x",
     "jschardet": "1.4.x",
     "lodash": "3.10.x",
