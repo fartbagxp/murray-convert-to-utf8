@@ -24,6 +24,7 @@ var failLogger = debug('app:converter:fail');
  *
  * @param  {[String]} path   The path of the input file
  * @param  {[String]} output The path of the output file.
+ * @return {[Boolean]} Flag that determines whether file was converted successfully.
  */
 converter.convert = function (input, output) {
 
@@ -43,10 +44,8 @@ converter.convert = function (input, output) {
 
   if(_.isNull(detection) || _.isNull(detection.encoding)) {
     failLogger('Unknown file encoding ', path.basename(input));
-    return;
+    return false;
   }
-
-  convertLogger('Encoding: ', JSON.stringify(detection));
 
   var encoding = detection.encoding.toLowerCase();
 
@@ -60,6 +59,8 @@ converter.convert = function (input, output) {
   fs.writeFileSync(output, converted);
 
   convertLogger('Converted file to utf8: ', path.basename(output));
+
+  return true;
 };
 
 module.exports = converter;

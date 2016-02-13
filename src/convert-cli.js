@@ -66,13 +66,17 @@ cli.work = function () {
     }
   });
 
+  var failedFiles = [];
+
   // Convert all .srt files into utf8 encoding.
   _.forEach(srts, function (s) {
     var filepath = path.resolve(inDir, s);
 
+    var outputPath = '';
+
     // If the overwrite flag is turned on, use the same file path for output file.
     if (overwrite) {
-      converter.convert(filepath, filepath);
+      outputPath = filepath;
     } else {
       // Otherwise, include a '-utf8' string in the file.
       var basename = path.basename(s);
@@ -82,10 +86,21 @@ cli.work = function () {
       } else {
         newname = path.resolve(outDir, basename);
       }
-      converter.convert(filepath, newname);
+      outputPath = newname;
+    }
+
+    var success = converter.convert(filepath, outputPath);
+    if (!success) {
+      failedFiles.push(path.basename(filepath));
     }
   });
 
+  if (_.size(failedFiles) > 0) {
+    convertLogger('All failed files: ', JSON.stringify(failedFiles, null, 2));
+  }
+  convertLogger('Number of failed files: ', _.size(failedFiles));
+
+  convertLogger('Completed conversions to utf8');
 };
 
 module.exports = cli;
