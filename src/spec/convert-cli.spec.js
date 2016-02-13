@@ -20,12 +20,12 @@ describe('Make sure the command line converter can convert from GB2312 to UTF8 e
         '-i',
         testDir,
         '-o',
-        path.resolve(__dirname, './data')
+        path.resolve(__dirname, './data/test')
       ];
 
       cli.work();
 
-      var outputFile = path.resolve(__dirname, './data/The.Wire.S01E02-utf8.srt');
+      var outputFile = path.resolve(__dirname, './data/test/The.Wire.S01E02.srt');
 
       // Read the contents
       var content = fs.readFileSync(outputFile);
@@ -63,7 +63,7 @@ describe('Make sure the command line converter can convert from GB2312 to UTF8 e
 
         cli.work();
 
-        var outputFile = path.resolve(__dirname, './data/test/The.Wire.S01E02-utf8.srt');
+        var outputFile = path.resolve(__dirname, './data/test/The.Wire.S01E02.srt');
 
         // Read the contents
         var content = fs.readFileSync(outputFile);

@@ -21,7 +21,7 @@
     "debug": "2.2.x",
     "iconv-lite": "0.4.x",
     "jschardet": "1.4.x",
-    "lodash": "3.10.x",
+    "lodash": "4.3.x",
     "mkdirp": "0.5.x"
   },
   "devDependencies": {

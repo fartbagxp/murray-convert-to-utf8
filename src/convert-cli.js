@@ -75,8 +75,7 @@ cli.work = function () {
       converter.convert(filepath, filepath);
     } else {
       // Otherwise, include a '-utf8' string in the file.
-      var extname = path.extname(s);
-      var basename = path.basename(s, extname) + '-utf8' + extname;
+      var basename = path.basename(s);
       var newname;
       if (_.isUndefined(outDir)) {
         newname = path.resolve(inDir, basename);
