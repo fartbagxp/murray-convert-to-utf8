@@ -47,8 +47,6 @@ cli.work = function () {
   }
 
   convertLogger('Converting all files to utf8');
-  convertLogger('Source location: ', inDir);
-  convertLogger('Target location: ', outDir);
 
   try {
     fs.accessSync(outDir, fs.F_OK);
@@ -95,11 +93,12 @@ cli.work = function () {
     }
   });
 
+  convertLogger('Source location: ', inDir);
+  convertLogger('Target location: ', outDir);
   if (_.size(failedFiles) > 0) {
     convertLogger('All failed files: ', JSON.stringify(failedFiles, null, 2));
   }
   convertLogger('Number of failed files: ', _.size(failedFiles));
-
   convertLogger('Completed conversions to utf8');
 };
 
